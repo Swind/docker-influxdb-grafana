@@ -16,8 +16,11 @@ telegraf:
   container_name: telegraf
   links:
     - influxdb
+  environment:
+    - HOST_PROC=/host/proc
   volumes:
     - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    - /proc:/host/proc:ro
 
 grafana:
   image: grafana/grafana:latest
