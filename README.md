@@ -3,7 +3,7 @@
 # + Grafana stack
 # + Telegraf
 
-Get the stack (only once):
+## Get the stack (only once):
 
 ```
 git clone https://github.com/nicolargo/docker-influxdb-grafana.git
@@ -13,30 +13,26 @@ docker pull influxdb
 docker pull telegraf
 ```
 
-Run your stack:
+## Run your stack:
 
 ```
-sudo mkdir -p /srv/docker/grafana/data
-docker-compose up -d
-sudo chown -R 472:472 /srv/docker/grafana/data
-
+./run.sh
 ```
 
-Show me the logs:
+## Show me the logs:
 
 ```
 docker-compose logs
 ```
 
-Stop it:
+## Stop it:
 
 ```
 docker-compose stop
 docker-compose rm
 ```
 
-Update it:
-
+## Update it:
 ```
 git pull
 docker pull grafana/grafana
@@ -44,8 +40,6 @@ docker pull influxdb
 docker pull telegraf
 ```
 
-If you want to run Telegraf, edit the telegraf.conf to yours needs and:
+## Grafana Dashboard
 
-```
-docker exec telegraf telegraf
-```
+https://grafana.com/grafana/dashboards/928
